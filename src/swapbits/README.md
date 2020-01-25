@@ -18,7 +18,7 @@ def swap_bits(x, i, j):
 ### 1. Most Significant bit and Least Significant bit of the integer (x)
 #### In this problem x = 73. The bits to be swapped are at positions 6 and 1. So i = 6 and j = 1.
 
-![](./images/MSB_LSB.jpg?raw=true)
+![](./images/MSB_LSB.JPG?raw=true)
 
 ### 2. ```x >> i```
 #### Move the relevant bit at index i to the LSB position.
