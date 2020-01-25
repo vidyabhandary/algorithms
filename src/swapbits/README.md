@@ -72,7 +72,7 @@ Use a bit mask to mark the position of the indices.
 
 > Toggle the bits to perform the swap operation. Use the bitmask with the index positions marked and perform bitwise XOR. Return the result.
 
-![](https://github.com/vidyabhandary/algorithms/blob/master/src/swapbits/Final_BitMask_Swap.jpg?raw=true)
+![](images/Final_BitMask_Swap.jpg?raw=true)
 
 &copy; vidyabhandary.github.io
  
