@@ -1,5 +1,5 @@
 # Swap bits - Visually
-##### Code that takes as input an integer (x) and swaps the bits at indices (i) and (j).
+## Code that takes as input an integer (x) and swaps the bits at indices (i) and (j).
 
 Following code is from EPI 4.2
 ```
@@ -15,64 +15,64 @@ def swap_bits(x, i, j):
 ----
 # Visual Explanation
 
-##### 1. Most Significant bit and Least Significant bit of the integer (x)
-In this problem x = 73. The bits to be swapped are at positions 6 and 1. So i = 6 and j = 1.
+### 1. Most Significant bit and Least Significant bit of the integer (x)
+#### In this problem x = 73. The bits to be swapped are at positions 6 and 1. So i = 6 and j = 1.
 
-![](./MSB_LSB.jpg)
+![](./images/MSB_LSB.jpg?raw=true)
 
-##### 2. ```x >> i```
-Move the relevant bit at index i to the LSB position.
+### 2. ```x >> i```
+#### Move the relevant bit at index i to the LSB position.
 
-![](./RShift_i.jpg)
+![](./images/RShift_i.JPG?raw=true)
 
-##### 3. ```(x >> i) & 1```
-Perform a bit AND operation to extract the bit value. In this case it gives 1.
+### 3. ```(x >> i) & 1```
+#### Perform a bit AND operation to extract the bit value. In this case it gives 1.
 
-![](./RShift_i_and_1.jpg)
+![](./images/RShift_i_and_1.JPG?raw=true)
 
-##### 4. ```x >> j```
-Move the relevant bit at index j to the LSB position.
+### 4. ```x >> j```
+#### Move the relevant bit at index j to the LSB position.
 
-![](./RShift_j.jpg)
+![](./images/RShift_j.JPG?raw=true)
 
 
-##### 5. ```(x >> j) & 1```
-Perform a bit AND operation to extract the bit value. In this case it gives 0.
+### 5. ```(x >> j) & 1```
+#### Perform a bit AND operation to extract the bit value. In this case it gives 0.
 
-![](./RShift_j_and_1.jpg)
+![](./images/RShift_j_and_1.JPG?raw=true)
 
-##### 6. ```(x >> i) & 1 != (x >> j) & 1```
+### 6. ```(x >> i) & 1 != (x >> j) & 1```
+#### At this point it is clear that the two bits to be swapped are different. Hence they need to be interchanged. If the bits were same we would simply return (x).
 
-At this point it is clear that the two bits to be swapped are different. Hence they need to be interchanged. If the bits were same we would simply return (x).
+![](./images/NotEqual.JPG?raw=true)
 
-![](./NotEqual.jpg)
+ ### 7. Bit mask ```(i << i) | (i << j)``` 
+ #### Use a bit mask to mark the position of the indices.
 
-##### 7. Bit mask ```(i << i) | (i << j)``` 
-Use a bit mask to mark the position of the indices.
+ #### 7a. ```(i << i)```  
 
-- ###### 7a. ```(i << i)```  
+ ##### Mark the first index position i with 1  
 
-> Mark the first index position i with 1  
+![](./images/LShift_i.JPG?raw=true)
 
-![](./LShift_i.jpg)
+ #### 7b. ```(i << j)``` 
 
-- ###### 7b. ```(i << j)``` 
+ ##### Mark the second index position j with j 1
 
-> Mark the second index position j with j 1
+![](./images/LShift_j.JPG?raw=true)
 
-![](./LShift_j.jpg)
+ #### 7c. ```(i << i) | (i << j)``` 
 
-- ###### 7c. ```(i << i) | (i << j)``` 
+ ##### Perform a bitwise OR to mark both the index positions in the bitmask
 
-> Perform a bitwise OR to mark both the index positions in the bitmask
+![](./images/LShift_i_and_j_OR.JPG?raw=true)
 
-![](./LShift_i_and_j_OR.jpg)
+### 8. ```x ^= bit_mask``` ( XOR to toggle the bits )
 
-##### 8. ```x ^= bit_mask``` ( XOR to toggle the bits )
+#### Toggle the bits to perform the swap operation. Use the bitmask with the index positions marked and perform bitwise XOR. Return the result.
 
-> Toggle the bits to perform the swap operation. Use the bitmask with the index positions marked and perform bitwise XOR. Return the result.
+![](./images/Final_BitMask_Swap.JPG?raw=true)
 
-![](/images/Final_BitMask_Swap.jpg?raw=true)
 
 &copy; vidyabhandary.github.io
  
